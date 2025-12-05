@@ -6,6 +6,8 @@
 #include <unistd.h>
 #include "socketutils.h"
 #include <stdbool.h>
+#include <stdlib.h>
+
 
 
 
@@ -62,6 +64,9 @@ int main() {
     //     printf("No response received\n");
     // }
     
+      shutdown(socketFD, SHUT_WR);
+          free(line);
+
     close(socketFD);
 
     
